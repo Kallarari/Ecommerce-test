@@ -4,7 +4,7 @@ This project was made by João Vitor Minosso in 29/03/2023
 
 ## Libraries
 
-this project uses, React, Typescript, styled-components, axios, json-server and context API.
+this project uses, React, Typescript, styled-components,iconify, axios, json-server and context API.
 
 ## Server
 
