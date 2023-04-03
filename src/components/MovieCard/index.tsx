@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import React, { useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { movieCardProps } from "./interface";
 
@@ -20,7 +21,9 @@ export const MovieCard: React.FC<movieCardProps> = ({
   const { products, setProducts } = useCart();
   const [isInCart, setIsInCart] = useState(false);
   const [howManyareInTheCart, setHowManyareInTheCart] = useState(0);
+  const navigate = useNavigate();
   function AddMovieToChart() {
+    if (isInCart) return navigate("/cart");
     if (products)
       return setProducts([
         ...products,
@@ -41,7 +44,8 @@ export const MovieCard: React.FC<movieCardProps> = ({
     ]);
   }
   useEffect(() => {
-    if (products)
+    if (products) {
+      sessionStorage.setItem("movies", JSON.stringify(products));
       if (products.find((product) => product.name === name)) {
         setIsInCart(true);
         const moviesFinded = products.filter(
@@ -49,6 +53,7 @@ export const MovieCard: React.FC<movieCardProps> = ({
         );
         setHowManyareInTheCart(moviesFinded.length);
       }
+    }
   }, [products]);
 
   return (

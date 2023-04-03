@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ChartProduct } from "../../components/chartProduct";
 import { useCart } from "../../hooks/useCart";
 
@@ -15,6 +16,16 @@ import {
 
 export const Cart: React.FC = () => {
   const { products, setProducts } = useCart();
+  const [total, setTotal] = useState(0);
+  function deleteMovie(key: number) {
+    products.splice(key, 1);
+    setProducts([...products]);
+  }
+  useEffect(() => {
+    var value = 0;
+    products.map((item) => (value = value + item.value));
+    setTotal(Math.round(value));
+  }, []);
   return (
     <Container>
       <Header>
@@ -22,27 +33,34 @@ export const Cart: React.FC = () => {
         <th>QTD</th>
         <th>SUBTOTAL</th>
       </Header>
-      <ChartProduct
-        name="viuva negra"
-        quantity={4}
-        value={10.99}
-        moreButton={() => {
-          console.log("more");
-        }}
-        minusButton={() => {
-          console.log("minus");
-        }}
-        trashButton={() => {
-          console.log("trash");
-        }}
-        image="https://wefit-react-web-test.s3.amazonaws.com/viuva-negra.png"
-      />
+      <>
+        {products &&
+          products.map((movie, key) => (
+            <ChartProduct
+              name={movie.name}
+              quantity={movie.quantity}
+              value={movie.value}
+              moreButton={() => {
+                console.log("more");
+              }}
+              minusButton={() => {
+                console.log("minus");
+              }}
+              trashButton={() => {
+                deleteMovie(key);
+              }}
+              image={movie.image}
+            />
+          ))}
+      </>
       <Line />
       <FooterSection>
-        <FinalizationButton>FINALIZAR PEDIDO</FinalizationButton>
+        <Link to="/purchase">
+          <FinalizationButton>FINALIZAR PEDIDO</FinalizationButton>
+        </Link>
         <ValueSection>
           <Total>TOTAL</Total>
-          <TotalValue>R$</TotalValue>
+          <TotalValue>R$ {total}</TotalValue>
         </ValueSection>
       </FooterSection>
     </Container>

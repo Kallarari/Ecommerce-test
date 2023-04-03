@@ -5,9 +5,7 @@ export const FooterSection = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export const Line = styled.hr`
-  margin-top: 21px;
-`;
+export const Line = styled.hr``;
 export const ValueSection = styled.div`
   display: flex;
   align-items: center;
@@ -51,6 +49,9 @@ export const Container = styled.div`
   padding: 24px;
 `;
 export const Header = styled.tr`
+  @media (max-width: 600px) {
+    display: none;
+  }
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
