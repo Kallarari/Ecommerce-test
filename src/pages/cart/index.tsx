@@ -40,12 +40,8 @@ export const Cart: React.FC = () => {
               name={movie.name}
               quantity={movie.quantity}
               value={movie.value}
-              moreButton={() => {
-                console.log("more");
-              }}
-              minusButton={() => {
-                console.log("minus");
-              }}
+              moreButton={() => {}}
+              minusButton={() => {}}
               trashButton={() => {
                 deleteMovie(key);
               }}
