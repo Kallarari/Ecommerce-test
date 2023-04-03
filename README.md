@@ -16,7 +16,7 @@ The server that feeds this aplication use JSON Server.
 
 Automatized test aren't impleted yet.
 
-# Running the porject
+# Running the project
 
 ### yarn install or npm install
 
@@ -27,3 +27,9 @@ Chose one of that and runs in the terminal in the root folder of the project.
 Run this and wait the project initiate in the browser
 
 ## you need to have node and I recomend VSCode.
+
+# Final considerations
+
+## why not use Next?
+
+because React Router is more understandable for someone that just know React.
