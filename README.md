@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Wefit ecommerce test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made by João Vitor Minosso in 29/03/2023
 
-## Available Scripts
+## Libraries
 
-In the project directory, you can run:
+this project uses, React, Typescript, styled-components,iconify, axios, json-server and context API.
 
-### `npm start`
+## Server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The server that feeds this aplication use JSON Server.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Test
 
-### `npm test`
+Automatized test aren't impleted yet.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Running the project
 
-### `npm run build`
+### yarn install or npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Chose one of that and runs in the terminal in the root folder of the project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### yarn server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run this and wait the back-end initiate
 
-### `npm run eject`
+### yarn start
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Run this and wait the project initiate in the browser
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## you need to have node and I recomend VSCode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Final considerations
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## why not use Next?
 
-## Learn More
+because React Router is more understandable for someone that just know React.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contex | Redux
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I chosse contex API instead Redux because that project have just 3 screens variations, and localy I prefer use Context.
