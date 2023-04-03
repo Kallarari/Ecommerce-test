@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CartContainer = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 export const CartText = styled.div`
   display: flex;
@@ -33,6 +34,9 @@ export const CartName = styled.h2`
   line-height: 19px;
   color: #ffffff;
   margin: auto 0;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const CartItens = styled.span`

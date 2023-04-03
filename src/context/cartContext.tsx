@@ -2,7 +2,7 @@ import React, { createContext, ReactNode, useState } from "react";
 
 export type CartContextDataProps = {
   products: Movie[];
-  setProducts: (movie: [Movie]) => void;
+  setProducts: (movie: Array<any>) => void;
 };
 
 type Movie = {
@@ -20,10 +20,7 @@ export const CartContext = createContext<CartContextDataProps>(
 );
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [products, setProducts] = useState([
-    { name: "lulu", value: 1, image: "none", quantity: 10 },
-    { name: "lulu", value: 1, image: "none", quantity: 10 },
-  ]);
+  const [products, setProducts] = useState<any>();
 
   return (
     <CartContext.Provider value={{ products, setProducts }}>

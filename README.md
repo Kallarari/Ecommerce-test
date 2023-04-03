@@ -20,6 +20,10 @@ Automatized test aren't impleted yet.
 
 Chose one of that and runs in the terminal in the root folder of the project.
 
+### yarn server
+
+Run this and wait the back-end initiate
+
 ### yarn start
 
 Run this and wait the project initiate in the browser
