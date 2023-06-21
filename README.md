@@ -1,4 +1,4 @@
-# Wefit ecommerce test
+# ecommerce test
 
 This project was made by João Vitor Minosso in 29/03/2023
 
